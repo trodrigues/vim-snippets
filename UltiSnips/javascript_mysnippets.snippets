@@ -1,0 +1,43 @@
+snippet f
+function (${1}) {
+	${0}
+}${2:;}
+endsnippet
+
+snippet stub
+sinon.stub(${0})${1:;}
+endsnippet
+
+snippet spy
+sinon.spy(${0})${1:;}
+endsnippet
+
+snippet eb "expect to Be (js)" b
+expect(${1:target}).toBe(${2:value});
+endsnippet
+
+snippet eca "expect to call stub(js)" b
+expect(${1:target}).toBeCalled();
+endsnippet
+
+snippet ecw "expect to call stub with(js)" b
+expect(${1:target}).toBeCalledWith(${2:value});
+endsnippet
+
+snippet cfstubspace "contentful space mocking" b
+cfStub.space('${1}');
+endsnippet
+
+snippet cfstubtypedata "contentful content type data mocking" b
+cfStub.contentTypeData('${1}');
+endsnippet
+
+snippet cfstubspacecontext "contentful space context mocking" b
+var contentTypeData = cfStub.contentTypeData('${1}');
+scope.spaceContext = cfStub.spaceContext(space, [contentTypeData]);
+endsnippet
+
+snippet cfstubentry "contentful entry mocking" b
+cfStub.entry(space, '{${1}', '${2}', {}, {});
+endsnippet
+
