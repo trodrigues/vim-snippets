@@ -24,20 +24,58 @@ snippet ecw "expect to call stub with(js)" b
 expect(${1:target}).toBeCalledWith(${2:value});
 endsnippet
 
-snippet cfstubspace "contentful space mocking" b
-cfStub.space('${1}');
+snippet cfstub "contentful stubs list" b
+cfStub.locale(code, extraData);
+cfStub.field(id, extraData);
+cfStub.locales();
+cfStub.space(id, extraData);
+cfStub.spaceContext(space, contentTypes);
+cfStub.contentTypeData(id, fields, extraData);
+cfStub.contentType(space, id, name, fields, extraData);
+cfStub.entry(space, id, contentTypeId, fields, extraData);
+cfStub.asset(space, id, fields, extraData);
+cfStub.apiKey(space, id, name, extraData);
 endsnippet
 
-snippet cfstubtypedata "contentful content type data mocking" b
-cfStub.contentTypeData('${1}');
+snippet cfstubspace "contentful locale mocking" b
+cfStub.locale(${1:code}, ${2:extraData});
+endsnippet
+
+snippet cfstubspace "contentful field mocking" b
+cfStub.field(${1:id, ${2:extraData});
+endsnippet
+
+snippet cfstubspace "contentful locales mocking" b
+cfStub.locales();
+endsnippet
+
+snippet cfstubspace "contentful space mocking" b
+cfStub.space('${1:id}', ${2:extraData});
+endsnippet
+
+snippet cfstubcontenttypedata "contentful content type data mocking" b
+cfStub.contentTypeData('${1:id}', ${2:fields}, ${3:extraData});
+endsnippet
+
+snippet cfstubcontenttype "contentful content type mocking" b
+cfStub.contentType('${1:id}', ${2:name}, ${2:fields}, ${3:extraData});
 endsnippet
 
 snippet cfstubspacecontext "contentful space context mocking" b
-var contentTypeData = cfStub.contentTypeData('${1}');
+var contentTypeData = cfStub.contentTypeData('${1:id}', ${2:fields}, ${3:extraData});
 scope.spaceContext = cfStub.spaceContext(space, [contentTypeData]);
 endsnippet
 
 snippet cfstubentry "contentful entry mocking" b
-cfStub.entry(space, '{${1}', '${2}', {}, {});
+cfStub.entry(${1:space}, ${1:id}, ${1:contentTypeId}, ${1:fields}, ${1:extraData});
 endsnippet
+
+snippet cfstubasset "contentful asset mocking" b
+cfStub.entry(${1:space}, ${1:id}, ${1:fields}, ${1:extraData});
+endsnippet
+
+snippet cfstubapikey "contentful apikey mocking" b
+cfStub.entry(${1:space}, ${1:id}, ${1:name}, ${1:extraData});
+endsnippet
+
 
