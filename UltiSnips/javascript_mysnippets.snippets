@@ -4,6 +4,12 @@ function (${1}) {
 }${2:;}
 endsnippet
 
+snippet (f "expand callbacks" i
+(function (${1}) {
+	${0}
+})
+endsnippet
+
 snippet stub
 sinon.stub(${0})${1:;}
 endsnippet
@@ -37,15 +43,15 @@ cfStub.asset(space, id, fields, extraData);
 cfStub.apiKey(space, id, name, extraData);
 endsnippet
 
-snippet cfstubspace "contentful locale mocking" b
+snippet cfstublocale "contentful locale mocking" b
 cfStub.locale(${1:code}, ${2:extraData});
 endsnippet
 
-snippet cfstubspace "contentful field mocking" b
-cfStub.field(${1:id, ${2:extraData});
+snippet cfstubfield "contentful field mocking" b
+cfStub.field('${1:id}', ${2:extraData});
 endsnippet
 
-snippet cfstubspace "contentful locales mocking" b
+snippet cfstublocales "contentful locales mocking" b
 cfStub.locales();
 endsnippet
 
@@ -58,7 +64,7 @@ cfStub.contentTypeData('${1:id}', ${2:fields}, ${3:extraData});
 endsnippet
 
 snippet cfstubcontenttype "contentful content type mocking" b
-cfStub.contentType('${1:id}', ${2:name}, ${2:fields}, ${3:extraData});
+cfStub.contentType('${1:id}', '${2:name}', ${3:fields}, ${4:extraData});
 endsnippet
 
 snippet cfstubspacecontext "contentful space context mocking" b
@@ -67,15 +73,15 @@ scope.spaceContext = cfStub.spaceContext(space, [contentTypeData]);
 endsnippet
 
 snippet cfstubentry "contentful entry mocking" b
-cfStub.entry(${1:space}, ${1:id}, ${1:contentTypeId}, ${1:fields}, ${1:extraData});
+cfStub.entry(${1:space}, '${2:id}', '${3:contentTypeId}', ${4:fields}, ${5:extraData});
 endsnippet
 
 snippet cfstubasset "contentful asset mocking" b
-cfStub.entry(${1:space}, ${1:id}, ${1:fields}, ${1:extraData});
+cfStub.entry(${1:space}, '${2:id}', ${3:fields}, ${4:extraData});
 endsnippet
 
 snippet cfstubapikey "contentful apikey mocking" b
-cfStub.entry(${1:space}, ${1:id}, ${1:name}, ${1:extraData});
+cfStub.entry(${1:space}, '${2:id}', '${3:name}', ${4:extraData});
 endsnippet
 
 
